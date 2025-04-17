@@ -11,4 +11,5 @@ for index, row in cell_data.iterrows():
         count = row[i]
         percentage = (count / total_count) * 100
         processed_data.loc[len(processed_data)] = [sample, total_count, population, count, percentage]
-print(processed_data)
+
+processed_data.to_csv('processed_cell_count.csv', index=False)
