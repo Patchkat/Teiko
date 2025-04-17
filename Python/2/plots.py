@@ -2,7 +2,6 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Read the data
 cell_data = pd.read_csv('cell-count.csv')
 processed_data = pd.read_csv('processed-cell-count.csv')
 
@@ -39,7 +38,7 @@ sns.boxplot(
 )
 plt.title('Cell Population Percentage by Response')
 plt.xlabel('Cell Population')
-plt.ylabel('Percentage of Total Cells')
+plt.ylabel('Cell Frequency')
 plt.legend(title='Responder', loc='lower left')
 plt.tight_layout()
 plt.savefig('cell_population_response.png')

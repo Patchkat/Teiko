@@ -9,11 +9,11 @@ for index, row in cell_data.iterrows():
     # Grab the total count and sample name
     total_count = sum(row[10:])
     sample = row['sample']
-    # Loop through each cell type and calculate the percentage
+    # Calculate the percentage
     for i in ['b_cell', 'cd8_t_cell', 'cd4_t_cell', 'nk_cell', 'monocyte']:
         population = i
         count = row[i]
         percentage = (count / total_count) * 100
         processed_data.loc[len(processed_data)] = [sample, total_count, population, count, percentage]
 # Output the processed data to a CSV file
-processed_data.to_csv('processed_cell_count.csv', index=False)
+processed_data.to_csv('processed-cell-count.csv', index=False)
