@@ -29,16 +29,16 @@ non_responders = filtered_data[filtered_data['response'] == 'n'][['population', 
 # Create the boxplot
 plt.figure()
 sns.boxplot(
-    x='population', 
-    y='percentage', 
-    hue='response', 
+    x='population',
+    y='percentage',
+    hue='response',
     data=pd.concat([responders, non_responders]),
     palette={'y': 'skyblue', 'n': 'lightcoral'},
     dodge=True
 )
-plt.title('Cell Population Percentage by Response')
+plt.title('Cell Population Frequency by Response')
 plt.xlabel('Cell Population')
-plt.ylabel('Cell Frequency')
+plt.ylabel('Cell Frequency (%)')
 plt.legend(title='Responder', loc='lower left')
 plt.tight_layout()
 plt.savefig('cell_population_response.png')
