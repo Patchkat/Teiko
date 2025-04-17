@@ -34,7 +34,7 @@ For tracking what treatment is given to a certain subject, there should be a **S
 | Column | Description |
 | ------ | ---------- |
 | subject_id   | Foreign key to the **Subjects** table (PRIMARY KEY)      |
-| treatment_id | Can reference a **Treatments** table with more info on the specific treatment if wanted |
+| treatment_id | Can reference a **Treatments** table with more info on the specific treatment if wanted (PRIMARY KEY) |
 | response     |Treatment response ('y', 'n', or NULL) |
 
 For keeping track of a given sample, a **Samples** table should be used.
@@ -42,7 +42,7 @@ For keeping track of a given sample, a **Samples** table should be used.
 | Column  | Description  |
 | ---- | -------- |
 | sample_id | Unique ID for the biological sample (PRIMARY KEY)  |
-| subject_id | Foreign key to the **Subjects** table  |
+| subject_id | Foreign key to the **Subjects** table (PRIMARY KEY if sample_id is not guaranteed unique)  |
 | sample_type  |  Type of sample  |
 | time_from_start | Days from treatment start (NULL for untreated if needed) |
 
@@ -51,5 +51,5 @@ Now if all that is needed are the types of cells in the given cell-count.csv, it
 | Column  | Description  |
 | --- | ------ |
 | sample_id  | Foreign key to the **Samples** table (PRIMARY KEY)  |
-| cell_type  | Type of cell |
+| cell_type  | Type of cell (PRIMARY KEY) |
 | cell_count | Cell count |
